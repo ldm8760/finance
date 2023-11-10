@@ -1,0 +1,8 @@
+TODO:
+
+tasks:
+--get options average price decay (similar to theta)
+--figure out proxy download as to not worry about losing data (COMPLETE)
+
+-clean up loose code
+-format code and output
