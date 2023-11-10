@@ -33,9 +33,9 @@ def obtain_data(option: str = 'download',
 
     
     if option == 'read':
-        spy1 = pd.read_csv(f'{sub_folder}data_{1}.csv')
-        spy2 = pd.read_csv(f'{sub_folder}data_{2}.csv')
-        vix = pd.read_csv(f'{sub_folder}data_{3}.csv')
+        spy1 = pd.read_csv(f'finance/{sub_folder}data_{1}.csv')
+        spy2 = pd.read_csv(f'finance/{sub_folder}data_{2}.csv')
+        vix = pd.read_csv(f'finance/{sub_folder}data_{3}.csv')
         return [spy1, spy2, vix]
 
 
