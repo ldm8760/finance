@@ -24,14 +24,24 @@ from my_functions import *
 
 start_time = time.perf_counter()
 stock = yf.Ticker("aapl")
-print(np.arange(0,100))
+i = stock.get_info()
+for key, value in i.items():
+    print(key, value)
 hist1d = stock.history(period='max', interval='1d')
+print(stock.get_shares_full(datetime(2020, 1, 1), datetime.today()))
+
+class Mined_Ticker:
+    def __init__(self) -> None:
+        self.shares = 0
+
+    def shares(self, start = None, end = None):
+        pass
 
 
 def shares_outstanding():
     """Returns shares outstanding of the given security"""
 
-    dfShares = pd.DataFrame(data=stock.shares)
+    dfShares = pd.DataFrame(data=stock.get_shares())
     dfShares.loc[2022] = stock.info['sharesOutstanding']
     return [[dfShares.index[i], dfShares['BasicShares'][dfShares.index[i]]] for i in y_len(dfShares)]
 

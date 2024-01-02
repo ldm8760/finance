@@ -20,7 +20,6 @@ def parse_spy_symbols():
     response = requests.get(url).text
     soup = BeautifulSoup(response, 'html.parser')
 
-    stock_symbols = []
     with open('sp500_stock_symbols.csv', 'w', newline='') as f:
         writer = csv.writer(f)
         writer.writerow(['Stock Symbol'])
